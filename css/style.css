@@ -38,8 +38,8 @@ h2 {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 10px 15px;
-   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+   padding: 9px 15px;
+   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-desktop {
@@ -51,7 +51,7 @@ h2 {
    background: none;
    border: none;
    color: var(--texto-main);
-   font-size: 1.1em;
+   font-size: 0.8em;
    cursor: pointer;
 }
 
@@ -64,6 +64,10 @@ h2 {
    flex: 1;
    display: flex;
    overflow: hidden;
+}
+
+.tag-codigo {
+   color: var(--titulos)
 }
 
 .activity-bar,
@@ -80,14 +84,13 @@ h2 {
 
 .titulo-sessao {
    color: var(--texto-main);
-   font-size: 1.9em;
+   font-size: 1.4em;
    margin: 10px 0;
 }
 
 .comentario {
    color: var(--coment-cod);
    font-size: 0.94em;
-   margin-bottom: 20px;
 }
 
 /* CARDS DE PROJETO*/
@@ -125,11 +128,16 @@ h2 {
    margin-top: 15px;
 }
 
+.descricao-card {
+   margin-top: 10px;
+   font-size: 0.92em;
+}
+
 .tech-badge {
    border: 1px solid rgba(255, 255, 255, 0.2);
    padding: 5px 10px;
    border-radius: 4px;
-   font-size: 0.8em;
+   font-size: 0.75em;
    opacity: 0.9;
    color: var(--texto-main);
 }
@@ -143,4 +151,58 @@ h2 {
    padding: 5px 16px;
    font-size: 0.75em;
    font-weight: 600;
+}
+
+/* DESKTOP*/
+@media (min-width: 768px) {
+
+   .menu-mobile,
+   .aba-ativa-mobile {
+      display: none;
+   }
+
+   .top-bar {
+      padding: 4px 10px;
+   }
+
+   .menu-desktop {
+      display: flex;
+      gap: 2px;
+   }
+
+   .menu-desktop a {
+      text-decoration: none;
+      font-size: 0.82em;
+      color: var(--texto-main);
+      padding: 5px 8px ;
+
+   }
+
+   .menu-desktop a:hover {
+      background-color: var(--bg-main);
+      border-radius: 4px;
+   }
+
+   .activity-bar {
+      display: flex; 
+      flex-direction: column;
+      width: 50px;
+      background-color: var(--bg-main);
+      border-right: 2px solid rgba(255, 255, 255, 0.1);
+   }
+
+   .side-bar {
+      display: block;
+      width: 250px;
+      background-color: var(--bg-sidebar);
+   }
+
+   .grid-projetos {
+      flex-direction: row;
+      flex-wrap: wrap;
+   }
+
+   .card-projeto {
+      flex: 1 1 calc(50% - 20px);
+   }
 }

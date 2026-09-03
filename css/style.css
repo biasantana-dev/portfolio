@@ -9,6 +9,7 @@
    --status: #50fa7b;
    --titulos: #ff79c6;
    --coment-cod: #f1fa8c;
+   --btn-links: #007acc;
    --fonte-texto: "JetBrains Mono", monospace;
    --fonte-titulo: "Montserrat", sans-serif;
 }
@@ -90,7 +91,7 @@ h2 {
 
 .comentario {
    color: var(--coment-cod);
-   font-size: 0.94em;
+   font-size: 1.1em;
 }
 
 /* CARDS DE PROJETO*/
@@ -142,6 +143,85 @@ h2 {
    color: var(--texto-main);
 }
 
+/* NOME E APRESENTAÇAO */
+.titulo-hero {
+   color: #fff;
+   font-size: 1.9em;
+   margin: 20px 0;
+   text-transform: uppercase;
+}
+
+.hero-badges {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   margin-bottom: 30px;
+}
+
+.verde::before {
+   content: "● ";
+   color: var(--status);
+}
+
+.roxo::before {
+   content: "● ";
+   color: var(--destaque);
+}
+
+.azul::before {
+   content: "● ";
+   color: #8be9fd;
+}
+
+.texto-apresentacao {
+   font-size: 1em;
+   line-height: 1.7;
+   max-width: 700px;
+   color: var(--texto-main);
+   margin-bottom: 35px;
+}
+
+.destaque-azul {
+   color: #8be9fd;
+}
+
+.destaque-roxo {
+   color: var(--destaque)
+}
+
+.destaque-verde {
+   color: var(--status);
+}
+/* BOTOES DE AÇAO */
+
+.botoes-acao {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 15px;
+   margin-bottom: 40px;
+}
+
+.btn-acao {
+   text-decoration: none;
+   padding: 8px 16px;
+   border-radius: 4px;
+   font-size: 0.85em;
+   font-weight: bold;
+   transition: 0.2s ease;
+   background-color: transparent;
+   color: #007acc;
+   border: 2px solid #007acc;
+   cursor: pointer;
+}
+
+.btn-acao:hover {
+   background-color: #007acc;
+   color: var(--texto-main);
+}
+
+/*GRID DE ESTATISTICAS*/
+
+
 /* RODAPE */
 .status-bar {
    background-color: var(--destaque);
@@ -174,7 +254,7 @@ h2 {
       text-decoration: none;
       font-size: 0.82em;
       color: var(--texto-main);
-      padding: 5px 8px ;
+      padding: 5px 8px;
 
    }
 
@@ -184,7 +264,7 @@ h2 {
    }
 
    .activity-bar {
-      display: flex; 
+      display: flex;
       flex-direction: column;
       width: 50px;
       background-color: var(--bg-main);
@@ -204,5 +284,45 @@ h2 {
 
    .card-projeto {
       flex: 1 1 calc(50% - 20px);
+   }
+
+   
+   .editor-tabs {
+      display: flex;
+      background-color: var(--bg-sidebar);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin: -20px -20px 20px;
+      overflow-x: auto;
+
+   }
+
+   .tab {
+      padding: 10px 20px;
+      font-size: 0.83em;
+      color: var(--texto-main);
+      opacity: 0.7;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      white-space: nowrap;
+   }
+
+   .tab-ativa {
+      opacity: 1;
+      background-color: var(--bg-main);
+      border-top: 1px solid var(--titulos);
+   }
+
+   /* NOME E APRESENTAÇAO */
+   .titulo-hero {
+      font-size: 2.5em;
+   }
+
+   .hero-badges span:hover {
+      background-color: #2e303884;
+      opacity: 0.92;
+      border-color: #ffffff46;
    }
 }

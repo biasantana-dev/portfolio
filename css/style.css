@@ -26,7 +26,8 @@ body {
    background-color: var(--bg-main);
    color: var(--texto-main);
    font-family: var(--fonte-texto);
-   min-height: 100vh;
+   height: 100vh;
+   overflow: hidden;
 }
 
 h1,
@@ -67,8 +68,15 @@ h2 {
    overflow: hidden;
 }
 
+.conteudo-ativo {
+   flex: 1;
+   overflow-y: auto;
+   padding: 20px;
+}
+
+
 .tag-codigo {
-   color: var(--titulos)
+   color: var(--titulos);
 }
 
 .activity-bar,
@@ -79,8 +87,14 @@ h2 {
 /* EDITOR - CONTEUDO PRINCIPAL */
 .editor {
    flex: 1;
-   padding: 20px;
-   overflow-y: auto;
+   display: flex;
+   flex-direction: column;
+   padding: 0;
+   overflow: hidden;
+}
+
+.editor-tabs {
+   display: none;
 }
 
 .comentario {
@@ -292,9 +306,12 @@ h2 {
 }
 
 @keyframes piscar {
-   0%, 100% {
+
+   0%,
+   100% {
       opacity: 1;
    }
+
    50% {
       opacity: 0;
    }
@@ -364,20 +381,115 @@ h2 {
       border-radius: 4px;
    }
 
+
+   /* ACTIVITY BAR */
    .activity-bar {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
       width: 50px;
-      background-color: var(--bg-main);
-      border-right: 2px solid rgba(255, 255, 255, 0.1);
-   }
-
-   .side-bar {
-      display: block;
-      width: 250px;
       background-color: var(--bg-sidebar);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
    }
 
+   .icones-topo,
+   .icones-base {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      width: 100%;
+   }
+
+   .btn-activity {
+      background-color: transparent;
+      border: none;
+      color: var(--texto-main);
+      font-size: 1.2em;
+      opacity: 0.5;
+      cursor: pointer;
+      padding: 8px 0;
+      width: 100%;
+      transition: 0.2s ease;
+      border-left: 2px solid transparent;
+   }
+
+   .btn-activity:hover {
+      opacity: 0.9;
+   }
+
+   .btn-activity.ativo {
+      opacity: 1;
+      border-left-color: var(--titulos);
+   }
+
+   /*SIDE BAR*/
+   .sidebar {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      background-color: var(--bg-sidebar);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      ;
+   }
+
+   .header-sidebar {
+      padding: 10px 15px;
+   }
+
+   .titulo-sidebar {
+      font-size: 0.75em;
+      letter-spacing: 1px;
+      color: var(--texto-main);
+      opacity: 0.7;
+      font-weight: bold;
+   }
+
+   .pasta-raiz {
+      padding: 5px 0;
+   }
+
+   .nome-pasta {
+      display: block;
+      font-size: 0.75em;
+      font-weight: bold;
+      padding: 5px 10px;
+      color: var(--texto-main);
+      opacity: 0.8;
+      cursor: pointer;
+   }
+
+   .lista-arquivos {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .item-arquivo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 30px;
+      color: var(--texto-main);
+      text-decoration: none;
+      font-size: 0.82em;
+      opacity: 0.8;
+      transition: background 0.2s ease;
+   }
+
+   .item-arquivo:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      opacity: 1;
+   }
+
+   .item-arquivo.ativo {
+      background-color: rgba(255, 255, 255, 0.08);
+      opacity: 1;
+      color: #fff;
+   }
+
+   /* PROJETOS */
    .grid-projetos {
       flex-direction: row;
       flex-wrap: wrap;
@@ -387,14 +499,15 @@ h2 {
       flex: 1 1 calc(50% - 20px);
    }
 
-
+   /* EDITOR */
    .editor-tabs {
       display: flex;
       background-color: var(--bg-sidebar);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      margin: -20px -20px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       overflow-x: auto;
-
+      margin: 0;
+      flex-shrink: 0;
+      overflow-x: auto;
    }
 
    .tab {
@@ -408,6 +521,11 @@ h2 {
       gap: 8px;
       border-right: 1px solid rgba(255, 255, 255, 0.05);
       white-space: nowrap;
+   }
+
+   .conteudo-ativo {
+      padding: 30px 20px;
+      margin-left: 40px;
    }
 
    .tab-ativa {

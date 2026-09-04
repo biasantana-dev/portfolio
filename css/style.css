@@ -83,12 +83,6 @@ h2 {
    overflow-y: auto;
 }
 
-.titulo-sessao {
-   color: var(--texto-main);
-   font-size: 1.4em;
-   margin: 10px 0;
-}
-
 .comentario {
    color: var(--coment-cod);
    font-size: 1.1em;
@@ -146,9 +140,8 @@ h2 {
 /* NOME E APRESENTAÇAO */
 .titulo-hero {
    color: #fff;
-   font-size: 1.9em;
+   font-size: 2em;
    margin: 20px 0;
-   text-transform: uppercase;
 }
 
 .hero-badges {
@@ -159,7 +152,7 @@ h2 {
 }
 
 
-.verde::before {
+.verde-badge::before {
    content: "● ";
    color: var(--status);
 }
@@ -193,6 +186,7 @@ h2 {
 .destaque-verde {
    color: var(--status);
 }
+
 /* BOTOES DE AÇAO */
 
 .botoes-acao {
@@ -206,7 +200,7 @@ h2 {
    text-decoration: none;
    padding: 8px 16px;
    border-radius: 4px;
-   font-size: 0.85em;
+   font-size: 0.8em;
    font-weight: bold;
    transition: 0.2s ease;
    background-color: transparent;
@@ -217,12 +211,117 @@ h2 {
 }
 
 .btn-acao:hover {
-   background-color: var(--btn-links);
-   color: var(--texto-main);
+   background-color: rgba(255, 255, 255, 0.05);
 }
 
-/*GRID DE ESTATISTICAS*/
+/* TERMINAL DE PERFIL */
+.terminal-perfil {
+   background-color: #191a21;
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   max-width: 700px;
+   border-radius: 8px;
+   margin-bottom: 40px;
+   overflow: hidden;
+   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
 
+.terminal-cabecalho {
+   background-color: var(--bg-sidebar);
+   padding: 10px 15px;
+   display: flex;
+   gap: 8px;
+   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.ponto {
+   width: 12px;
+   height: 12px;
+   border-radius: 50%;
+}
+
+.vermelho {
+   background-color: #ff5555;
+}
+
+.amarelo {
+   background-color: var(--coment-cod);
+}
+
+.verde {
+   background-color: var(--status);
+}
+
+.terminal-corpo {
+   padding: 20px;
+   font-size: 0.9em;
+   line-height: 1.7;
+}
+
+.linha-retorno {
+   color: rgba(248, 248, 242, 0.7);
+   padding-left: 15px;
+}
+
+.prompt {
+   color: var(--titulos);
+   font-weight: bold;
+   margin-right: 8px;
+}
+
+.check {
+   color: var(--status);
+   margin-right: 8px;
+}
+
+.destaque-terminal {
+   color: #8be9fd;
+   margin-top: 5px;
+   margin-bottom: 12px;
+}
+
+.seta {
+   margin-right: 8px;
+}
+
+.cursor-pisca {
+   display: inline-block;
+   width: 8px;
+   height: 15px;
+   background-color: var(--texto-main);
+   animation: piscar 1s step-end infinite
+}
+
+@keyframes piscar {
+   0%, 100% {
+      opacity: 1;
+   }
+   50% {
+      opacity: 0;
+   }
+}
+
+/* REDES SOCIAIS */
+.redes-sociais {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+}
+
+.rede-link {
+   color: var(--texto-main);
+   text-decoration: none;
+   font-size: 0.9em;
+   border: 1px solid rgba(255, 255, 255, 0.293);
+   padding: 5px 12px;
+   border-radius: 4px;
+   opacity: 0.9;
+   transition: 0.2s ease;
+}
+
+.rede-link:hover {
+   opacity: 1;
+   background-color: rgba(255, 255, 255, 0.05);
+}
 
 /* RODAPE */
 .status-bar {
@@ -288,7 +387,7 @@ h2 {
       flex: 1 1 calc(50% - 20px);
    }
 
-   
+
    .editor-tabs {
       display: flex;
       background-color: var(--bg-sidebar);
@@ -319,7 +418,8 @@ h2 {
 
    /* NOME E APRESENTAÇAO */
    .titulo-hero {
-      font-size: 2.5em;
+      font-size: 2.3em;
+      text-transform: uppercase;
    }
 
    .hero-badges span:hover {

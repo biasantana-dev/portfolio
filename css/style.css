@@ -41,7 +41,7 @@ h2 {
    justify-content: space-between;
    align-items: center;
    padding: 9px 15px;
-   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-desktop {
@@ -102,22 +102,94 @@ h2 {
    font-size: 1.1em;
 }
 
+/* TROCA DE PAGINAS */
+/* .escondido {
+   display: none !important;
+} */
+
+.fechamento-array {
+   font-size: 2em;
+   font-weight: bold;  
+   color: #fff;
+   margin: 0 0 15px 30px;
+}
+
+.secao-conteudo {
+   overflow-y: auto;
+}
+
+.sintaxe-topo {
+   margin: 18px 30px;
+}
+
 /* CARDS DE PROJETO*/
 .grid-projetos {
-   display: flex;
-   flex-direction: column;
+   display: grid;
+   grid-template-columns: 1fr;
    gap: 20px;
+   margin: 30px;
 }
 
 .card-projeto {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
    background-color: var(--bg-sidebar);
    border: 1px solid rgba(255, 255, 255, 0.05);
    border-radius: 6px;
    padding: 20px;
+   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-projeto:hover {
+   transform: translateY(-3px);
+   border-color: rgba(189, 147, 249, 0.4);
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.destaque-card {
+   border-left: 3px solid var(--status);
+}
+
+.botoes-card {
+   display: flex;
+   gap: 10px;
+   margin-top: 20px;
+   flex-wrap: wrap;
+}
+
+.btn-card {
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+   text-decoration: none;
+   font-size: 0.78em;
+   font-weight: bold;
+   padding: 6px 12px;
+   border-radius: 4px;
+   color: var(--texto-main);
+   background-color: rgba(255, 255, 255, 0.05);
+   border: 1px solid rgba(255, 255, 255, 0.15);
+   transition: 0.2s ease;
+}
+
+.btn-card:hover {
+   background-color: rgba(255, 255, 255, 0.12);
+   color: #fff;
+}
+
+.btn-card.btn-destaque {
+   border-color: var(--destaque);
+   color: var(--destaque);
+}
+
+.btn-card.btn-destaque:hover {
+   background-color: var(--destaque);
+   color: var(--bg-main);
 }
 
 h2 {
-   font-size: 1.6em;
+   font-size: 1.3em;
 }
 
 .tags-card {
@@ -391,7 +463,7 @@ h2 {
       padding: 10px 0;
       width: 50px;
       background-color: var(--bg-sidebar);
-      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
    }
 
    .icones-topo,
@@ -413,7 +485,7 @@ h2 {
       padding: 8px 0;
       width: 100%;
       transition: 0.2s ease;
-      border-left: 2px solid transparent;
+      border-left: 1px solid transparent;
    }
 
    .btn-activity:hover {
@@ -431,8 +503,7 @@ h2 {
       flex-direction: column;
       width: 200px;
       background-color: var(--bg-sidebar);
-      border-right: 1px solid rgba(255, 255, 255, 0.05);
-      ;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
    }
 
    .header-sidebar {
@@ -491,19 +562,14 @@ h2 {
 
    /* PROJETOS */
    .grid-projetos {
-      flex-direction: row;
-      flex-wrap: wrap;
-   }
-
-   .card-projeto {
-      flex: 1 1 calc(50% - 20px);
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
    }
 
    /* EDITOR */
    .editor-tabs {
       display: flex;
       background-color: var(--bg-sidebar);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       overflow-x: auto;
       margin: 0;
       flex-shrink: 0;
@@ -519,7 +585,7 @@ h2 {
       display: flex;
       align-items: center;
       gap: 8px;
-      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
       white-space: nowrap;
    }
 
@@ -531,7 +597,7 @@ h2 {
    .tab-ativa {
       opacity: 1;
       background-color: var(--bg-main);
-      border-top: 1px solid var(--titulos);
+      border-top: 2px solid var(--titulos);
    }
 
    /* NOME E APRESENTAÇAO */

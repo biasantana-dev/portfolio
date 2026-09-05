@@ -67,7 +67,7 @@
 
          <div class="pasta-raiz">
             <span class="nome-pasta"><i class="fa-solid fa-chevron-down"></i> PORTFOLIO</span>
-            
+
             <div class="lista-arquivos ativo">
                <a href="" class="item-arquivo ativo">
                   <i class="fa-brands fa-html5" style="color: #e34c26;"></i> home.html
@@ -103,7 +103,7 @@
          </div>
 
 
-         <section class="conteudo-ativo">
+         <section class="conteudo-ativo" id="sec-home">
             <!-- hero - nomes e badges-->
             <div class="sintaxe-topo">
                <p class="comentario"> &lt;!-- apresentação_profissional.html --&gt; </p>
@@ -118,13 +118,12 @@
             </div>
 
             <!-- texto de apresentação-->
-            <p class="texto-apresentacao">Construindo interfaces dinâmicas!</p>
-            <p class="texto-apresentacao">
-               Estudante de Análise e Desenvolvimento de Sistemas com foco em <span
+            <p class="texto-apresentacao">Estudante de Análise e Desenvolvimento de Sistemas com foco em <span
                   class="destaque-azul">desenvolvimento front-end</span> e <span class="destaque-roxo">lógica de
-                  programação</span>. Crio soluções interativas utilizando <span class="destaque-azul">JavaScript</span>
-               e busco minha primeira oportunidade de <span class="destaque-verde">estágio em desenvolvimento de
-                  software</span>.
+                  programação</span>.
+            <p class="texto-apresentacao">Crio soluções interativas utilizando <span
+                  class="destaque-azul">JavaScript</span> e busco minha primeira oportunidade de <span
+                  class="destaque-verde">estágio em desenvolvimento de software</span>.
             </p>
 
             <!-- botoes de açao principais -->
@@ -170,25 +169,113 @@
                <a href="mailto:beatrizsantana.dev@gmail.com" class="rede-link"><i class="fa-regular fa-envelope"
                      style="color: #ff79c6;"></i> E-mail</a>
             </div>
+         </section>
 
-            <!-- <div class="grid-projetos">
-               <article class="card-projeto">
-                  <span class="icone-card"></span>
-                  <p class="tags-card"><span class="tag-destaque">FRONT-END  • LÓGICA</span></p>
-                  <h2>nome do projeto</h2>
-                  <p class="descricao-card">explicação do que o projeto faz, qual problema resolve e como foi constrído</p>
 
+         <section id="sec-projetos" class="secao-conteudo escondido">
+            <div class="sintaxe-topo">
+               <p class="comentario">// projetos_desenvolvidos.js</p>
+               <h1 class="titulo-hero"><span class="tag-codigo">const</span> meusProjetos = [</h1>
+            </div>
+
+            <div class="grid-projetos">
+
+               <article class="card-projeto destaque-card">
+                  <p class="tags-card"><span class="tag-destaque">★ DESTAQUE • FRONT-END • LÓGICA</span></p>
+                  <h2>DevPharma</h2>
+                  <p class="descricao-card">
+                     Sistema de gerenciamento de estoque farmacêutico com controle de medicamentos, cadastro e validação
+                     dinâmica de dados.
+                  </p>
                   <div class="tecnologias-card">
                      <span class="tech-badge">HTML5</span>
                      <span class="tech-badge">CSS3</span>
                      <span class="tech-badge">JavaScript</span>
                   </div>
-               </article> -->
+                  <div class="botoes-card">
+                     <a href="https://github.com/biasantana-dev/Projeto-DevPharma" target="_blank" class="btn-card">
+                        <i class="fa-brands fa-github"></i> Repositório
+                     </a>
+                     <a href="https://biasantana-dev.github.io/Projeto-DevPharma/" target="_blank"
+                        class="btn-card btn-destaque">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Projeto
+                     </a>
+                  </div>
+               </article>
 
-   </div>
-   </section>
+               <article class="card-projeto destaque-card">
+                  <p class="tags-card"><span class="tag-destaque">JOGO • INTERATIVIDADE • LÓGICA</span></p>
+                  <h2>Mini Aventura Textual</h2>
+                  <p class="descricao-card">
+                     Jogo interativo RPG/Cyberpunk executado no navegador com tomada de decisões, ramificações de
+                     história e manipulação do DOM.
+                  </p>
+                  <div class="tecnologias-card">
+                     <span class="tech-badge">HTML5</span>
+                     <span class="tech-badge">CSS3</span>
+                     <span class="tech-badge">JavaScript</span>
+                  </div>
+                  <div class="botoes-card">
+                     <a href="https://github.com/biasantana-dev/mini-aventura-textual" target="_blank" class="btn-card">
+                        <i class="fa-brands fa-github"></i> Repositório
+                     </a>
+                     <a href="https://biasantana-dev.github.io/mini-aventura-textual/" target="_blank"
+                        class="btn-card btn-destaque">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Projeto
+                     </a>
+                  </div>
+               </article>
 
-   </main>
+               <article class="card-projeto destaque-card">
+                  <p class="tags-card"><span class="tag-destaque">UTILITÁRIO • CÁLCULO • BATERIA</span></p>
+                  <h2>Simulador de Autonomia</h2>
+                  <p class="descricao-card">
+                     Aplicação web para cálculo e simulação de consumo e autonomia de combustível para veículos com base
+                     em dados informados.
+                  </p>
+                  <div class="tecnologias-card">
+                     <span class="tech-badge">HTML5</span>
+                     <span class="tech-badge">CSS3</span>
+                     <span class="tech-badge">JavaScript</span>
+                  </div>
+                  <div class="botoes-card">
+                     <a href="https://github.com/biasantana-dev/projeto-simulador-de-autonomia" target="_blank"
+                        class="btn-card">
+                        <i class="fa-brands fa-github"></i> Repositório
+                     </a>
+                     <a href="https://biasantana-dev.github.io/projeto-simulador-de-autonomia/" target="_blank"
+                        class="btn-card btn-destaque">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Projeto
+                     </a>
+                  </div>
+               </article>
+
+               <article class="card-projeto destaque-card">
+                  <p class="tags-card"><span class="tag-destaque">UI / UX • RESPONSIVO • SPA</span></p>
+                  <h2>Portfólio</h2>
+                  <p class="descricao-card">
+                     Interface interativa inspirada no editor de código, desenvolvida com navegação por abas, explorador
+                     e layout fixo.
+                  </p>
+                  <div class="tecnologias-card">
+                     <span class="tech-badge">HTML5</span>
+                     <span class="tech-badge">CSS3</span>
+                     <span class="tech-badge">JavaScript</span>
+                  </div>
+                  <div class="botoes-card">
+                     <a href="https://github.com/biasantana-dev/portfolio" target="_blank" class="btn-card">
+                        <i class="fa-brands fa-github"></i> Repositório
+                     </a>
+                     <a href="https://biasantana-dev.github.io/portfolio/" target="_blank"
+                        class="btn-card btn-destaque">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Projeto
+                     </a>
+                  </div>
+               </article>
+            </div>
+            <p class="fechamento-array">];</p>
+         </section>
+      </main>
    </div>
 
    <footer class="status-bar">
@@ -197,7 +284,7 @@
             style="color: #282a36;"></i></span>
       <span>Espaços:3</span>
       <span>UTF-8</span>
-      <span>{}javascript</span>
+      <span>{ }javascript</span>
       <span><i class="fa-regular fa-bell"></i></span>
    </footer>
 

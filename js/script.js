@@ -1,5 +1,5 @@
 const menuItens = document.querySelectorAll('.item-arquivo');
-const abas = document.querySelectorAll('.editor-tabs');
+const abas = document.querySelectorAll('.tab');
 const secoes = document.querySelectorAll('.secao-conteudo');
 
 const btnMenuMobile = document.getElementById('btn-menu');
@@ -19,13 +19,16 @@ function alternarTela(idAlvo, elementoClicado) {
    });
 
    const secaoAlvo = document.getElementById(idAlvo);
-   secaoAlvo.classList.remove('escondido');
+   if (secaoAlvo) {
+      secaoAlvo.classList.remove('escondido');
+   }
 
    if (elementoClicado) {
-      if (elementoClicado.classList.contains('tab')) {
-         elementoClicado.classList.add('tab-ativa');
-      } else 
+      if (elementoClicado.classList.contains('item-arquivo')) {
          elementoClicado.classList.add('ativo');
+      } else if (elementoClicado.classList.contains('tab')) {
+         elementoClicado.classList.add('tab-ativa')
+      }
    }
 }
 
@@ -33,20 +36,24 @@ menuItens.forEach(item => {
    item.addEventListener('click', e => {
       e.preventDefault();
 
-      const href = item.getAttribute('href');
-      const alvo = href.replace('#', '');
-      alternarTela(alvo, item);
+      const alvo = item.getAttribute('href').replace('#', '');
+      if (alvo) {
+         alternarTela(alvo, item);
+      }
    });
 });
 
 abas.forEach(aba => {
    aba.addEventListener('click', () => {
-      const href = aba.getAttribute('href');
-      const alvo = href ? href.replace('#', '') : 'sec-home';
-      alternarTela(alvo, aba);
+      const alvo = aba.dataset.alvo;
+      if (alvo) {
+         alternarTela(alvo, aba);
+      }
    });
 });
 
-btnMenuMobile.addEventListener('click', () => {
-   sidebar.classList.toggle('ativo');
-});
+if (btnMenuMobile && sidebar) {
+   btnMenuMobile.addEventListener('click', () => {
+      sidebar.classList.toggle('menu-aberto');
+   });
+}

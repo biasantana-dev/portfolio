@@ -63,9 +63,7 @@ h2 {
 }
 
 .vscode-container {
-   flex: 1;
-   display: flex;
-   overflow: hidden;
+   position: relative;
 }
 
 .conteudo-ativo {
@@ -74,7 +72,6 @@ h2 {
    padding: 20px;
 }
 
-
 .tag-codigo {
    color: var(--titulos);
 }
@@ -82,6 +79,25 @@ h2 {
 .activity-bar,
 .sidebar {
    display: none;
+}
+
+.sidebar.menu-aberto {
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 260px;
+   height: 100%;
+   background-color: var(--bg-sidebar);
+   z-index: 10;
+   box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
+   transform: translateX(-110%);
+   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar.menu-aberto {
+   transform: translateX(0);
 }
 
 /* EDITOR - CONTEUDO PRINCIPAL */
@@ -109,17 +125,15 @@ h2 {
 
 .fechamento-array {
    font-size: 2em;
-   font-weight: bold;  
+   font-weight: bold;
    color: #fff;
-   margin: 0 0 15px 30px;
+   margin: 0 0 15px 0;
 }
 
 .secao-conteudo {
+   padding: 30px 20px 20px 0;
+   margin-left: 20px;
    overflow-y: auto;
-}
-
-.sintaxe-topo {
-   margin: 18px 30px;
 }
 
 /* CARDS DE PROJETO*/
@@ -127,7 +141,7 @@ h2 {
    display: grid;
    grid-template-columns: 1fr;
    gap: 20px;
-   margin: 30px;
+   margin: 30px 30px 30px 10px;
 }
 
 .card-projeto {
@@ -475,6 +489,12 @@ h2 {
 
    }
 
+   .vscode-container {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+   }
+
    .menu-desktop a:hover {
       background-color: var(--bg-main);
       border-radius: 4px;
@@ -526,11 +546,16 @@ h2 {
 
    /*SIDE BAR*/
    .sidebar {
+      position: static;
       display: flex;
       flex-direction: column;
       width: 200px;
+      height: 100%;
       background-color: var(--bg-sidebar);
       border-right: 1px solid rgba(255, 255, 255, 0.1);
+      transform: none;
+      box-shadow: none;
+      z-index: 1;
    }
 
    .header-sidebar {
@@ -616,7 +641,7 @@ h2 {
       white-space: nowrap;
    }
 
-   .conteudo-ativo {
+   .secao-conteudo {
       padding: 30px 20px;
       margin-left: 40px;
    }

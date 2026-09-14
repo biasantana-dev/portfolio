@@ -1,9 +1,18 @@
 const menuItens = document.querySelectorAll('.item-arquivo');
 const abas = document.querySelectorAll('.tab');
 const secoes = document.querySelectorAll('.secao-conteudo');
+const containerSidebar = document.querySelector('.container-explorer');
 
 const btnMenuMobile = document.getElementById('btn-menu');
 const sidebar = document.getElementById('sidebar');
+const iconePasta = document.getElementById('icone-explorer');
+
+const nomesFormatados = {
+   'home': 'home.html',
+   'sobre-mim': 'sobre-mim.css',
+   'projetos': 'projetos.js'
+};
+
 
 const meusProjetos = [
    {
@@ -60,8 +69,8 @@ function renderizarProjetos() {
                ${projeto.tecnologias.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
             </div>
             <div class="botoes-card">
-               <a href="${projeto.linkRepo}" target="_blank"     class="btn-card"><i class="fa-brands fa-github"></i> Repositório</a>
-               <a href="${projeto.linkPagina}" target="_blank" class="btn-card btn-destaque"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Projeto</a>
+               <a href="${projeto.linkRepo}" target="_blank" rel="noopener noreferrer" class="btn-card"><i class="fa-brands fa-github"></i> Repositório</a>
+               <a href="${projeto.linkPagina}" target="_blank" rel="noopener noreferrer" class="btn-card btn-destaque"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Projeto</a>
             </div>
          </article>
       `;
@@ -69,7 +78,6 @@ function renderizarProjetos() {
 
    container.innerHTML = projetosHTML;
 }
-
 renderizarProjetos();
 
 function alternarTela(idAlvo) {
@@ -85,9 +93,26 @@ function alternarTela(idAlvo) {
    if (itemSidebarAtivo) itemSidebarAtivo.classList.add('ativo');
 
    const abaAtiva = document.querySelector(`.tab[data-alvo=${idAlvo}]`);
-   if (abaAtiva) abaAtiva.classList.add('tab-avita');
+   if (abaAtiva) abaAtiva.classList.add('tab-ativa');
 
-   if (sidebar && sidebar.classList.contains('menu-aberto')) sidebar.classList.remove('menu-aberto');  
+   if (sidebar && sidebar.classList.contains('menu-aberto')) sidebar.classList.remove('menu-aberto');
+
+   const tituloMobile = document.getElementById('aba-ativa-mobile');
+   if (tituloMobile) {
+      tituloMobile.textContent = nomesFormatados[idAlvo] || idAlvo;
+   }
+
+   const overlay = document.getElementById('overlay-mobile');
+
+   btnMenuMobile.addEventListener('click', () => {
+      sidebar.classList.add('menu-aberto');
+      overlay.classList.remove('escondido');
+   });
+
+   overlay.addEventListener('click', () => {
+      sidebar.classList.remove('menu-aberto');
+      overlay.classList.add('escondido');
+   });
 }
 
 menuItens.forEach(item => {
@@ -95,18 +120,14 @@ menuItens.forEach(item => {
       e.preventDefault();
 
       const alvo = item.getAttribute('href').replace('#', '');
-      if (alvo) {
-         alternarTela(alvo, item);
-      }
+      if (alvo) alternarTela(alvo);
    });
 });
 
 abas.forEach(aba => {
    aba.addEventListener('click', () => {
       const alvo = aba.dataset.alvo;
-      if (alvo) {
-         alternarTela(alvo, aba);
-      }
+      if (alvo) alternarTela(alvo);
    });
 });
 
@@ -115,3 +136,8 @@ if (btnMenuMobile && sidebar) {
       sidebar.classList.toggle('menu-aberto');
    });
 }
+
+iconesPasta.addEventListener('click', () => {
+   containerSidebar.toggle('explorer-oculto')
+});
+

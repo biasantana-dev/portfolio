@@ -48,13 +48,42 @@ h2 {
    display: none;
 }
 
-.btn-icone,
-.menu-mobile {
+.header-mobile {
+   display: flex;
+   width: 100vw;
+   flex-direction: row;
+   gap: 10px;
+   align-items: center;
    background: none;
    border: none;
    color: var(--texto-main);
-   font-size: 0.8em;
    cursor: pointer;
+   margin: 3px 0;
+}
+
+#btn-menu {
+   font-size: 1.25em;
+}
+
+#aba-ativa-mobile {
+   font-size: 0.85em;
+}
+
+#overlay-mobile {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   background: rgba(0, 0, 0, 0.5);
+   backdrop-filter: blur(3px);
+   z-index: 99;
+   transition: opacity 0.3s ease;
+}
+
+#overlay-mobile.escondido {
+   display: none;
+   opacity: 0;
 }
 
 .aba-ativa-mobile {
@@ -130,20 +159,16 @@ h2 {
 .sidebar.menu-aberto {
    display: flex;
    flex-direction: column;
-   position: absolute;
+   position: fixed;
    top: 0;
    left: 0;
    width: 220px;
-   height: 100%;
+   height: 100vh;
    background-color: var(--bg-sidebar);
-   z-index: 10;
+   z-index: 100;
    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.5);
-   transform: translateX(-110%);
-   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.sidebar.menu-aberto {
    transform: translateX(0);
+   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* EDITOR - CONTEUDO PRINCIPAL */
@@ -513,13 +538,18 @@ h2 {
 /* DESKTOP*/
 @media (min-width: 768px) {
 
-   .menu-mobile,
+   .header-mobile,
    .aba-ativa-mobile {
       display: none;
    }
 
    .top-bar {
       padding: 4px 10px;
+   }
+
+   .explorer-oculto {
+      width: 0;
+      overflow: hidden;
    }
 
    .menu-desktop {

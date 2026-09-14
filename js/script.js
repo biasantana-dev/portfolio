@@ -9,6 +9,7 @@ const meusProjetos = [
    {
       titulo: 'DevPharma',
       destaque: '★ DESTAQUE • FRONT-END • LÓGICA',
+      isDestaque: true,
       descricao: 'Sistema de gerenciamento de estoque farmacêutico com controle de medicamentos, cadastro e validação dinâmica de dados.',
       tecnologias: ['HTML', 'CSS', 'Javascript'],
       linkRepo: 'https://github.com/biasantana-dev/Projeto-DevPharma',
@@ -18,6 +19,7 @@ const meusProjetos = [
    {
       titulo: 'Mini Aventura Textual',
       destaque: 'JOGO • INTERATIVIDADE • LÓGICA',
+      isDestaque: false,
       descricao: 'Jogo interativo RPG/Cyberpunk executado no navegador com tomada de decisões, ramificações de história e manipulação do DOM.',
       tecnologias: ['HTML', 'CSS', 'Javascript'],
       linkRepo: 'https://github.com/biasantana-dev/mini-aventura-textual',
@@ -27,6 +29,7 @@ const meusProjetos = [
    {
       titulo: 'Simulador de Autonomia',
       destaque: 'UTILITÁRIO • CÁLCULO • BATERIA',
+      isDestaque: false,
       descricao: 'Aplicação web para cálculo e simulação de consumo e autonomia de combustível para veículos com base em dados informados.',
       tecnologias: ['HTML', 'CSS', 'Javascript'],
       linkRepo: 'https://github.com/biasantana-dev/projeto-simulador-de-autonomia',
@@ -36,6 +39,7 @@ const meusProjetos = [
    {
       titulo: 'Portfólio',
       destaque: 'UI / UX • RESPONSIVO • SPA',
+      isDestaque: false,
       descricao: 'Interface interativa inspirada no editor de código, desenvolvida com navegação por abas, explorador e layout fixo.',
       tecnologias: ['HTML', 'CSS', 'Javascript'],
       linkRepo: 'https://github.com/biasantana-dev/portfolio',
@@ -57,7 +61,7 @@ function renderizarProjetos() {
             </div>
             <div class="botoes-card">
                <a href="${projeto.linkRepo}" target="_blank"     class="btn-card"><i class="fa-brands fa-github"></i> Repositório</a>
-               <a href="" target="_blank" class="btn-card btn-destaque"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Projeto</a>
+               <a href="${projeto.linkPagina}" target="_blank" class="btn-card btn-destaque"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Projeto</a>
             </div>
          </article>
       `;
@@ -68,31 +72,22 @@ function renderizarProjetos() {
 
 renderizarProjetos();
 
-function alternarTela(idAlvo, elementoClicado) {
-   secoes.forEach(secao => {
-      secao.classList.add('escondido');
-   });
+function alternarTela(idAlvo) {
+   secoes.forEach(secao => secao.classList.add('escondido'));
 
-   menuItens.forEach(item => {
-      item.classList.remove('ativo');
-   });
-
-   abas.forEach(aba => {
-      aba.classList.remove('tab-ativa');
-   });
+   menuItens.forEach(item => item.classList.remove('ativo'));
+   abas.forEach(aba => aba.classList.remove('tab-ativa'));
 
    const secaoAlvo = document.getElementById(idAlvo);
-   if (secaoAlvo) {
-      secaoAlvo.classList.remove('escondido');
-   }
+   if (secaoAlvo) secaoAlvo.classList.remove('escondido');
 
-   if (elementoClicado) {
-      if (elementoClicado.classList.contains('item-arquivo')) {
-         elementoClicado.classList.add('ativo');
-      } else if (elementoClicado.classList.contains('tab')) {
-         elementoClicado.classList.add('tab-ativa')
-      }
-   }
+   const itemSidebarAtivo = document.querySelector(`.item-arquivo[href="#${idAlvo}"]`);
+   if (itemSidebarAtivo) itemSidebarAtivo.classList.add('ativo');
+
+   const abaAtiva = document.querySelector(`.tab[data-alvo=${idAlvo}]`);
+   if (abaAtiva) abaAtiva.classList.add('tab-avita');
+
+   if (sidebar && sidebar.classList.contains('menu-aberto')) sidebar.classList.remove('menu-aberto');  
 }
 
 menuItens.forEach(item => {

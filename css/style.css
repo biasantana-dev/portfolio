@@ -64,11 +64,11 @@ h2 {
 
 .vscode-container {
    position: relative;
+   overflow-y: auto;
 }
 
 .conteudo-ativo {
    flex: 1;
-   overflow-y: auto;
    padding: 20px;
 }
 

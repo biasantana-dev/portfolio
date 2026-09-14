@@ -5,11 +5,74 @@ const secoes = document.querySelectorAll('.secao-conteudo');
 const btnMenuMobile = document.getElementById('btn-menu');
 const sidebar = document.getElementById('sidebar');
 
+const meusProjetos = [
+   {
+      titulo: 'DevPharma',
+      destaque: '★ DESTAQUE • FRONT-END • LÓGICA',
+      descricao: 'Sistema de gerenciamento de estoque farmacêutico com controle de medicamentos, cadastro e validação dinâmica de dados.',
+      tecnologias: ['HTML', 'CSS', 'Javascript'],
+      linkRepo: 'https://github.com/biasantana-dev/Projeto-DevPharma',
+      linkPagina: 'https://biasantana-dev.github.io/Projeto-DevPharma/'
+   },
+
+   {
+      titulo: 'Mini Aventura Textual',
+      destaque: 'JOGO • INTERATIVIDADE • LÓGICA',
+      descricao: 'Jogo interativo RPG/Cyberpunk executado no navegador com tomada de decisões, ramificações de história e manipulação do DOM.',
+      tecnologias: ['HTML', 'CSS', 'Javascript'],
+      linkRepo: 'https://github.com/biasantana-dev/mini-aventura-textual',
+      linkPagina: 'https://biasantana-dev.github.io/mini-aventura-textual/'
+   },
+
+   {
+      titulo: 'Simulador de Autonomia',
+      destaque: 'UTILITÁRIO • CÁLCULO • BATERIA',
+      descricao: 'Aplicação web para cálculo e simulação de consumo e autonomia de combustível para veículos com base em dados informados.',
+      tecnologias: ['HTML', 'CSS', 'Javascript'],
+      linkRepo: 'https://github.com/biasantana-dev/projeto-simulador-de-autonomia',
+      linkPagina: 'https://biasantana-dev.github.io/projeto-simulador-de-autonomia/'
+   },
+
+   {
+      titulo: 'Portfólio',
+      destaque: 'UI / UX • RESPONSIVO • SPA',
+      descricao: 'Interface interativa inspirada no editor de código, desenvolvida com navegação por abas, explorador e layout fixo.',
+      tecnologias: ['HTML', 'CSS', 'Javascript'],
+      linkRepo: 'https://github.com/biasantana-dev/portfolio',
+      linkPagina: 'https://biasantana-dev.github.io/portfolio/'
+   },
+];
+
+function renderizarProjetos() {
+   const container = document.querySelector('#grid-projetos');
+
+   const projetosHTML = meusProjetos.map(projeto => {
+      return `
+         <article class="card-projeto destaque-card">
+            <p class="tags-card"><span class="tag-destaque">${projeto.destaque}</span></p>
+            <h2>${projeto.titulo}</h2>
+            <p class="descricao-card">${projeto.descricao}</p>
+            <div class="tecnologias-card">
+               ${projeto.tecnologias.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+            </div>
+            <div class="botoes-card">
+               <a href="${projeto.linkRepo}" target="_blank"     class="btn-card"><i class="fa-brands fa-github"></i> Repositório</a>
+               <a href="" target="_blank" class="btn-card btn-destaque"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver Projeto</a>
+            </div>
+         </article>
+      `;
+   }).join('');
+
+   container.innerHTML = projetosHTML;
+}
+
+renderizarProjetos();
+
 function alternarTela(idAlvo, elementoClicado) {
    secoes.forEach(secao => {
       secao.classList.add('escondido');
    });
-   
+
    menuItens.forEach(item => {
       item.classList.remove('ativo');
    });

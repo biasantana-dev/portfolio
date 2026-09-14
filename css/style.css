@@ -378,9 +378,9 @@ h2 {
 
 .botoes-acao {
    display: flex;
-   flex-wrap: wrap;
+   justify-content: center;
    gap: 15px;
-   margin-bottom: 40px;
+   margin: 35px auto;
 }
 
 .btn-acao {
@@ -394,7 +394,6 @@ h2 {
    color: var(--btn-links);
    border: 2px solid var(--btn-links);
    cursor: pointer;
-   margin-top: 25px;
 }
 
 .btn-acao:hover {
@@ -493,6 +492,7 @@ h2 {
 /* REDES SOCIAIS */
 .redes-sociais {
    display: flex;
+   justify-content: center;
    flex-wrap: wrap;
    gap: 10px;
 }
@@ -577,7 +577,6 @@ h2 {
       font-size: 0.82em;
       color: var(--texto-main);
       padding: 5px 8px;
-
    }
 
    .vscode-container {
@@ -726,5 +725,15 @@ h2 {
       background-color: #2e303884;
       opacity: 0.92;
       border-color: #ffffff46;
+   }
+
+   .botoes-acao {
+      justify-content: flex-start;
+      margin: 40px 0;
+   }
+
+   .redes-sociais {
+      justify-content: flex-start;
+
    }
 }

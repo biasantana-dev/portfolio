@@ -1,18 +1,17 @@
 const menuItens = document.querySelectorAll('.item-arquivo');
 const abas = document.querySelectorAll('.tab');
 const secoes = document.querySelectorAll('.secao-conteudo');
-const containerSidebar = document.querySelector('.container-explorer');
+const sidebar = document.querySelector('.sidebar');
 
 const btnMenuMobile = document.getElementById('btn-menu');
-const sidebar = document.getElementById('sidebar');
-const iconePasta = document.getElementById('icone-explorer');
+const overlay = document.getElementById('overlay-mobile');
+const btnFechar = document.getElementById('btn-fechar-menu');
 
 const nomesFormatados = {
    'home': 'home.html',
    'sobre-mim': 'sobre-mim.css',
    'projetos': 'projetos.js'
 };
-
 
 const meusProjetos = [
    {
@@ -80,9 +79,18 @@ function renderizarProjetos() {
 }
 renderizarProjetos();
 
+function abrirMenuMobile() {
+   if (sidebar) sidebar.classList.add('menu-aberto');
+   if (overlay) overlay.classList.remove('escondido');
+}
+
+function fecharMenuMobile() {
+   sidebar.classList.remove('menu-aberto');
+   overlay.classList.add('escondido');
+}
+
 function alternarTela(idAlvo) {
    secoes.forEach(secao => secao.classList.add('escondido'));
-
    menuItens.forEach(item => item.classList.remove('ativo'));
    abas.forEach(aba => aba.classList.remove('tab-ativa'));
 
@@ -95,30 +103,30 @@ function alternarTela(idAlvo) {
    const abaAtiva = document.querySelector(`.tab[data-alvo=${idAlvo}]`);
    if (abaAtiva) abaAtiva.classList.add('tab-ativa');
 
-   if (sidebar && sidebar.classList.contains('menu-aberto')) sidebar.classList.remove('menu-aberto');
-
    const tituloMobile = document.getElementById('aba-ativa-mobile');
    if (tituloMobile) {
       tituloMobile.textContent = nomesFormatados[idAlvo] || idAlvo;
    }
 
-   const overlay = document.getElementById('overlay-mobile');
+   fecharMenuMobile();
+}
 
+if (btnMenuMobile) {
    btnMenuMobile.addEventListener('click', () => {
-      sidebar.classList.add('menu-aberto');
-      overlay.classList.remove('escondido');
-   });
-
-   overlay.addEventListener('click', () => {
-      sidebar.classList.remove('menu-aberto');
-      overlay.classList.add('escondido');
+      if (sidebar && sidebar.classList.contains('menu-aberto')) {
+         fecharMenuMobile();
+      } else {
+         abrirMenuMobile();
+      }
    });
 }
+
+if (btnFechar) btnFechar.addEventListener('click', fecharMenuMobile);
+if (overlay) overlay.addEventListener('click', fecharMenuMobile);
 
 menuItens.forEach(item => {
    item.addEventListener('click', e => {
       e.preventDefault();
-
       const alvo = item.getAttribute('href').replace('#', '');
       if (alvo) alternarTela(alvo);
    });
@@ -130,14 +138,3 @@ abas.forEach(aba => {
       if (alvo) alternarTela(alvo);
    });
 });
-
-if (btnMenuMobile && sidebar) {
-   btnMenuMobile.addEventListener('click', () => {
-      sidebar.classList.toggle('menu-aberto');
-   });
-}
-
-iconesPasta.addEventListener('click', () => {
-   containerSidebar.toggle('explorer-oculto')
-});
-

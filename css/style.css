@@ -65,6 +65,22 @@ h2 {
    font-size: 1.25em;
 }
 
+/* BOTAO PARA FECHAR MENU*/
+.btn-fechar-mobile {
+   background-color: transparent;
+   border: none;
+   color: var(--texto-main);
+   font-size: 1.4em;
+   cursor: pointer;
+   float: right;
+   padding: 0px 6px;
+}
+
+.btn-fechar-mobile:hover {
+   background-color: rgba(255, 255, 255, 0.05);
+   border-radius: 25px;
+}
+
 #aba-ativa-mobile {
    font-size: 0.85em;
 }
@@ -111,7 +127,7 @@ h2 {
 }
 
 .header-sidebar {
-   padding: 10px 15px;
+   padding: 12px 15px;
    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -547,9 +563,8 @@ h2 {
       padding: 4px 10px;
    }
 
-   .explorer-oculto {
-      width: 0;
-      overflow: hidden;
+   .btn-fechar-mobile {
+      display: none;
    }
 
    .menu-desktop {
@@ -575,7 +590,6 @@ h2 {
       background-color: var(--bg-main);
       border-radius: 4px;
    }
-
 
    /* ACTIVITY BAR */
    .activity-bar {

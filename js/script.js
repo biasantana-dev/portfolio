@@ -138,3 +138,55 @@ abas.forEach(aba => {
       if (alvo) alternarTela(alvo);
    });
 });
+
+const dropdowns = document.querySelectorAll('.menu-item-dropdown');
+dropdowns.forEach(dropdown => {
+   const btn = dropdown.querySelector('.btn-menu-top');
+   btn.addEventListener('click', e => {
+      e.stopPropagation();
+
+      dropdowns.forEach(d => {
+         if (d !== dropdown) d.classList.remove('ativo');
+      });
+
+      dropdown.classList.toggle('ativo');
+   });
+});
+
+document.addEventListener('click', () => {
+   dropdowns.forEach(d => d.classList.remove('ativo'));
+});
+
+const btnToggleSidebar = document.getElementById('btn-toggle-sidebar');
+if (btnToggleSidebar && sidebar) {
+   btnToggleSidebar.addEventListener('click', () => {
+      sidebar.classList.toggle('explorer-oculto');
+   });
+}
+
+const btnFullscreen = document.getElementById('btn-fullscreen');
+if (btnFullscreen) {
+   btnFullscreen.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+         document.documentElement.requestFullscreen();
+      } else {
+         if (document.exitFullscreen) document.exitFullscreen();
+      }
+   });
+}
+
+const btnsNavTop = document.querySelectorAll('.btn-nav-top');
+btnsNavTop.forEach(btn => {
+   btn.addEventListener('click', e => {
+      e.preventDefault();
+      const alvo = btn.dataset.alvo;
+      if (alvo) alternarTela(alvo);
+   });
+});  
+
+const btnSobreProjeto = document.getElementById('btn-sobre-projeto');
+if (btnSobreProjeto) {
+   btnSobreProjeto.addEventListener('click', () => {
+      alert('VS Code Portfolio v1.0\nDesenvolvido por Beatriz Santana com HTML, CSS e JavaScript puro!');
+   });
+}

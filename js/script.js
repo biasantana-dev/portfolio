@@ -2,10 +2,17 @@ const menuItens = document.querySelectorAll('.item-arquivo');
 const abas = document.querySelectorAll('.tab');
 const secoes = document.querySelectorAll('.secao-conteudo');
 const sidebar = document.querySelector('.sidebar');
+const dropdowns = document.querySelectorAll('.menu-item-dropdown');
+const btnsNavTop = document.querySelectorAll('.btn-nav-top');
 
 const btnMenuMobile = document.getElementById('btn-menu');
 const overlay = document.getElementById('overlay-mobile');
 const btnFechar = document.getElementById('btn-fechar-menu');
+
+const btnSobreProjeto = document.getElementById('btn-sobre-projeto');
+const btnActivityExplorer = document.getElementById('btn-activity-explorer');
+const btnToggleSidebar = document.getElementById('btn-toggle-sidebar');
+const btnFullscreen = document.getElementById('btn-fullscreen');
 
 const nomesFormatados = {
    'home': 'home.html',
@@ -111,6 +118,22 @@ function alternarTela(idAlvo) {
    fecharMenuMobile();
 }
 
+function alternarSidebar() {
+   if (!sidebar) return;
+
+   const estaColapsado = sidebar.classList.toggle('colapsado');
+   if (btnActivityExplorer) {
+      if (estaColapsado) {
+         btnActivityExplorer.classList.remove('ativo');
+      } else {
+         btnActivityExplorer.classList.add('ativo');
+      }
+   }
+}
+
+if (btnActivityExplorer) btnActivityExplorer.addEventListener('click', alternarSidebar);
+if (btnToggleSidebar) btnToggleSidebar.addEventListener('click', alternarSidebar);
+
 if (btnMenuMobile) {
    btnMenuMobile.addEventListener('click', () => {
       if (sidebar && sidebar.classList.contains('menu-aberto')) {
@@ -139,7 +162,6 @@ abas.forEach(aba => {
    });
 });
 
-const dropdowns = document.querySelectorAll('.menu-item-dropdown');
 dropdowns.forEach(dropdown => {
    const btn = dropdown.querySelector('.btn-menu-top');
    btn.addEventListener('click', e => {
@@ -157,14 +179,7 @@ document.addEventListener('click', () => {
    dropdowns.forEach(d => d.classList.remove('ativo'));
 });
 
-const btnToggleSidebar = document.getElementById('btn-toggle-sidebar');
-if (btnToggleSidebar && sidebar) {
-   btnToggleSidebar.addEventListener('click', () => {
-      sidebar.classList.toggle('explorer-oculto');
-   });
-}
 
-const btnFullscreen = document.getElementById('btn-fullscreen');
 if (btnFullscreen) {
    btnFullscreen.addEventListener('click', () => {
       if (!document.fullscreenElement) {
@@ -175,7 +190,6 @@ if (btnFullscreen) {
    });
 }
 
-const btnsNavTop = document.querySelectorAll('.btn-nav-top');
 btnsNavTop.forEach(btn => {
    btn.addEventListener('click', e => {
       e.preventDefault();
@@ -184,7 +198,6 @@ btnsNavTop.forEach(btn => {
    });
 });  
 
-const btnSobreProjeto = document.getElementById('btn-sobre-projeto');
 if (btnSobreProjeto) {
    btnSobreProjeto.addEventListener('click', () => {
       alert('VS Code Portfolio v1.0\nDesenvolvido por Beatriz Santana com HTML, CSS e JavaScript puro!');

@@ -612,25 +612,28 @@ h2 {
    }
 
    .btn-activity {
-      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none;
       border: none;
       color: var(--texto-main);
       font-size: 1.2em;
-      opacity: 0.5;
+      opacity: 0.6;
       cursor: pointer;
-      padding: 8px 0;
+      padding: 10px 0;
       width: 100%;
-      transition: 0.2s ease;
-      border-left: 1px solid transparent;
+      transition: opacity 0.2s ease, border-color 0.2s ease;
+      border-left: 2px solid transparent;
    }
 
    .btn-activity:hover {
-      opacity: 0.9;
+      opacity: 1;
    }
 
    .btn-activity.ativo {
       opacity: 1;
-      border-left-color: var(--titulos);
+      border-left-color: var(--destaque);
    }
 
    /*SIDE BAR*/
@@ -638,13 +641,17 @@ h2 {
       position: static;
       display: flex;
       flex-direction: column;
-      width: 200px;
+      width: 190px;
       height: 100%;
       background-color: var(--bg-sidebar);
       border-right: 1px solid rgba(255, 255, 255, 0.1);
       transform: none;
       box-shadow: none;
       z-index: 1;
+   }
+
+   .sidebar.colapsado {
+      display: none !important;
    }
 
    .header-sidebar {
@@ -671,7 +678,7 @@ h2 {
 
    .item-arquivo {
       gap: 10px;
-      padding: 6px 30px;
+      padding: 6px 28px;
       font-size: 0.82em;
    }
 
@@ -685,14 +692,12 @@ h2 {
       display: flex;
       background-color: var(--bg-sidebar);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      overflow-x: auto;
       margin: 0;
       flex-shrink: 0;
-      overflow-x: auto;
    }
 
    .tab {
-      padding: 10px 20px;
+      padding: 7px 15px;
       font-size: 0.83em;
       color: var(--texto-main);
       opacity: 0.7;
@@ -712,7 +717,7 @@ h2 {
    .tab-ativa {
       opacity: 1;
       background-color: var(--bg-main);
-      border-top: 2px solid var(--titulos);
+      border-top: 2px solid var(--destaque);
    }
 
    /* NOME E APRESENTAÇAO */
@@ -763,7 +768,7 @@ h2 {
 
    /* DROPDOWN */
    .dropdown-menu {
-      display: none; 
+      display: none;
       position: absolute;
       top: 100%;
       left: 0;
@@ -781,7 +786,9 @@ h2 {
       flex-direction: column;
    }
 
-   .item-dropdown, a.item-dropdown, button.item-dropdown {
+   .item-dropdown,
+   a.item-dropdown,
+   button.item-dropdown {
       width: 100%;
       background: none;
       border: none;
@@ -800,11 +807,14 @@ h2 {
       transition: background 0.2s ease, color 0.2s ease;
    }
 
-   a.item-dropdown:link, a.item-dropdown:visited {
+   a.item-dropdown:link,
+   a.item-dropdown:visited {
       color: var(--texto-main);
    }
 
-   .item-dropdown:hover, a.item-dropdown:hover, button.item-dropdown:hover {
+   .item-dropdown:hover,
+   a.item-dropdown:hover,
+   button.item-dropdown:hover {
       background-color: var(--destaque);
       color: var(--bg-main);
    }

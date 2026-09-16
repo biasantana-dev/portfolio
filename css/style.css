@@ -697,7 +697,7 @@ h2 {
    }
 
    .tab {
-      padding: 7px 15px;
+      padding: 5px 12px;
       font-size: 0.82em;
       color: #8b9298;
       background-color: transparent;
@@ -711,6 +711,7 @@ h2 {
    }
 
    .btn-fechar-aba {
+      margin-left: 1px;
       padding: 2px 4px;
       border-radius: 4px;
       cursor: ´pointer;
@@ -718,12 +719,23 @@ h2 {
       transition: opacity 0.2s, background-color 0.2s;
    }
 
-   .tab:hover .btn-fechar-aba, .tab.tab-ativa .btn-fechar-aba {
+   .btn-fechar-aba i {
+      opacity: 0.7;
+      font-size: 11px;
+   }
+
+   .btn-fechar-aba i:hover {
+      opacity: 1;
+   }
+
+   .tab:hover .btn-fechar-aba,
+   .tab.tab-ativa .btn-fechar-aba {
       opacity: 1;
    }
 
    .btn-fechar-aba:hover {
-      background-color: rgba(255, 255, 255, 0.1);;
+      background-color: rgba(255, 255, 255, 0.1);
+      ;
    }
 
    .secao-conteudo {

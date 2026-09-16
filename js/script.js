@@ -97,7 +97,7 @@ function renderizarAbas() {
       const arquivo = dadosArquivos[id];
       const isAtiva = id === abaAtivaId ? 'tab-ativa' : '';
 
-      const botaoFechar = id === 'home' ? '' : `<span class="btn-fechar-aba" data-fechar="${id}"><i class="fa-solid fa-xmark"></i></span>`;
+      const botaoFechar = `<span class="btn-fechar-aba" data-fechar="${id}"><i class="fa-solid fa-xmark"></i></span>`;
 
       return `
          <div class="tab ${isAtiva}" data-alvo="${id}">

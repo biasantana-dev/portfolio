@@ -1,5 +1,4 @@
 const menuItens = document.querySelectorAll('.item-arquivo');
-const abas = document.querySelectorAll('.tab');
 const secoes = document.querySelectorAll('.secao-conteudo');
 const sidebar = document.querySelector('.sidebar');
 const dropdowns = document.querySelectorAll('.menu-item-dropdown');
@@ -8,17 +7,22 @@ const btnsNavTop = document.querySelectorAll('.btn-nav-top');
 const btnMenuMobile = document.getElementById('btn-menu');
 const overlay = document.getElementById('overlay-mobile');
 const btnFechar = document.getElementById('btn-fechar-menu');
+const tabsContainer = document.getElementById('tabs-container');
 
 const btnSobreProjeto = document.getElementById('btn-sobre-projeto');
 const btnActivityExplorer = document.getElementById('btn-activity-explorer');
 const btnToggleSidebar = document.getElementById('btn-toggle-sidebar');
 const btnFullscreen = document.getElementById('btn-fullscreen');
 
-const nomesFormatados = {
-   'home': 'home.html',
-   'sobre-mim': 'sobre-mim.css',
-   'projetos': 'projetos.js'
-};
+
+const dadosArquivos = {
+   'home': { nome: 'home.html', icone: 'fa-brands fa-html5', cor: '#e34c26' },
+   'projetos': { nome: 'projetos.js', icone: 'fa-brands fa-js', cor: '#f7df1e' },
+   'sobre-mim': { nome: 'sobre-mim.css', icone: 'fa-brands fa-css3-alt', cor: '#264de4' }
+}
+
+let abasAbertas = ['home'];
+let abaAtivaId = 'home';
 
 const meusProjetos = [
    {
@@ -86,20 +90,64 @@ function renderizarProjetos() {
 }
 renderizarProjetos();
 
-function abrirMenuMobile() {
-   if (sidebar) sidebar.classList.add('menu-aberto');
-   if (overlay) overlay.classList.remove('escondido');
+function renderizarAbas() {
+   if (!tabsContainer) return;
+
+   tabsContainer.innerHTML = abasAbertas.map(id => {
+      const arquivo = dadosArquivos[id];
+      const isAtiva = id === abaAtivaId ? 'tab-ativa' : '';
+
+      const botaoFechar = id === 'home' ? '' : `<span class="btn-fechar-aba" data-fechar="${id}"><i class="fa-solid fa-xmark"></i></span>`;
+
+      return `
+         <div class="tab ${isAtiva}" data-alvo="${id}">
+            <span class="icone-tab"><i class="${arquivo.icone}" style="color: ${arquivo.cor};"></i></span>
+            ${arquivo.nome}
+            ${botaoFechar}
+         </div>
+      `;
+   }).join('');
 }
 
-function fecharMenuMobile() {
-   sidebar.classList.remove('menu-aberto');
-   overlay.classList.add('escondido');
+if (tabsContainer) {
+   tabsContainer.addEventListener('click', e => {
+      const btnFechar = e.target.closest('.btn-fechar-aba');
+      const aba = e.target.closest('.tab');
+
+      if (btnFechar) {
+         fecharAba(btnFechar.dataset.fechar)
+      } else if (aba) {
+         alternarTela(aba.dataset.alvo);
+      }
+   });
+}
+
+function fecharAba(id) {
+   if (id === 'home') return;
+
+   abasAbertas = abasAbertas.filter(aba => aba !== id);
+
+   const secao = document.getElementById(id);
+   if (secao) secao.classList.add('escondido');
+
+   if (id === abaAtivaId) {
+      alternarTela(abasAbertas[abasAbertas.length - 1]);
+   } else {
+      renderizarAbas();
+   }
 }
 
 function alternarTela(idAlvo) {
+   if (!idAlvo) return;
+
+   if (!abasAbertas.includes(idAlvo)) {
+      abasAbertas.push(idAlvo);
+   }
+
+   abaAtivaId = idAlvo;
+
    secoes.forEach(secao => secao.classList.add('escondido'));
    menuItens.forEach(item => item.classList.remove('ativo'));
-   abas.forEach(aba => aba.classList.remove('tab-ativa'));
 
    const secaoAlvo = document.getElementById(idAlvo);
    if (secaoAlvo) secaoAlvo.classList.remove('escondido');
@@ -107,15 +155,38 @@ function alternarTela(idAlvo) {
    const itemSidebarAtivo = document.querySelector(`.item-arquivo[href="#${idAlvo}"]`);
    if (itemSidebarAtivo) itemSidebarAtivo.classList.add('ativo');
 
-   const abaAtiva = document.querySelector(`.tab[data-alvo=${idAlvo}]`);
-   if (abaAtiva) abaAtiva.classList.add('tab-ativa');
-
    const tituloMobile = document.getElementById('aba-ativa-mobile');
-   if (tituloMobile) {
-      tituloMobile.textContent = nomesFormatados[idAlvo] || idAlvo;
+   if (tituloMobile && dadosArquivos[idAlvo]) {
+      tituloMobile.textContent = dadosArquivos[idAlvo].nome;
    }
 
-   fecharMenuMobile();
+   renderizarAbas();
+}
+
+
+menuItens.forEach(item => {
+   item.addEventListener('click', e => {
+      e.preventDefault();
+      const alvo = item.getAttribute('href').replace('#', '');
+
+      alternarTela(alvo);
+
+      if (window.innerWidth <= 768) {
+        fecharMenuMobile();
+      }
+   });
+});
+
+renderizarAbas();
+
+function abrirMenuMobile() {
+   if (sidebar) sidebar.classList.add('menu-aberto');
+   if (overlay) overlay.classList.remove('escondido');
+}
+
+function fecharMenuMobile() {
+   if (sidebar) sidebar.classList.remove('menu-aberto');
+   if (overlay) overlay.classList.add('escondido');
 }
 
 function alternarSidebar() {
@@ -146,21 +217,6 @@ if (btnMenuMobile) {
 
 if (btnFechar) btnFechar.addEventListener('click', fecharMenuMobile);
 if (overlay) overlay.addEventListener('click', fecharMenuMobile);
-
-menuItens.forEach(item => {
-   item.addEventListener('click', e => {
-      e.preventDefault();
-      const alvo = item.getAttribute('href').replace('#', '');
-      if (alvo) alternarTela(alvo);
-   });
-});
-
-abas.forEach(aba => {
-   aba.addEventListener('click', () => {
-      const alvo = aba.dataset.alvo;
-      if (alvo) alternarTela(alvo);
-   });
-});
 
 dropdowns.forEach(dropdown => {
    const btn = dropdown.querySelector('.btn-menu-top');
@@ -196,7 +252,7 @@ btnsNavTop.forEach(btn => {
       const alvo = btn.dataset.alvo;
       if (alvo) alternarTela(alvo);
    });
-});  
+});
 
 if (btnSobreProjeto) {
    btnSobreProjeto.addEventListener('click', () => {

@@ -119,6 +119,7 @@ h2 {
 
 .tag-codigo {
    color: var(--titulos);
+   font-size: 0.84em;
 }
 
 .activity-bar,
@@ -194,10 +195,6 @@ h2 {
    flex-direction: column;
    padding: 0;
    overflow: hidden;
-}
-
-.tag-codigo {
-   font-size: 0.9em;
 }
 
 .editor-tabs {

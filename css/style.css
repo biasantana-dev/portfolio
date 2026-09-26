@@ -212,7 +212,7 @@ h2 {
 }
 
 .fechamento-array {
-   font-size: 2em;
+   font-size: 1.9em;
    font-weight: bold;
    color: #fff;
    margin: 0 0 15px 0;
@@ -220,7 +220,7 @@ h2 {
 
 .secao-conteudo {
    padding: 20px 15px;
-  box-sizing: border-box;
+   box-sizing: border-box;
    overflow-y: auto;
    width: 100%;
 }
@@ -240,7 +240,7 @@ h2 {
    background-color: var(--bg-sidebar);
    border: 1px solid rgba(255, 255, 255, 0.05);
    border-radius: 6px;
-   padding: 10px;
+   padding: 10px 15px 18px;
    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -313,6 +313,7 @@ h2 {
 }
 
 .descricao-card {
+   padding: 0 4px;
    margin-top: 10px;
    font-size: 0.92em;
 }
@@ -517,14 +518,13 @@ h2 {
 
 /* SOBRE MIM */
 .bloco-css {
-   padding: 0 30px;
-   margin: 18px;
+   padding: 5px;
    border-left: 2px solid rgba(255, 255, 255, 0.05);
 }
 
 .subtitulo-css {
-   font-size: 1.4em;
-   margin: 20px 30px;
+   font-size: 1.7em;
+   margin: 20px 0;
 }
 
 .linha-css {
@@ -532,6 +532,8 @@ h2 {
    font-size: 0.92em;
    line-height: 1.8;
    padding-bottom: 8px;
+   word-wrap: break-word;
+   margin: 0 10px;
 }
 
 .propriedade {
@@ -686,7 +688,7 @@ h2 {
 
    /* PROJETOS */
    .grid-projetos {
-       margin: 30px 30px 30px 10px;
+      margin: 30px 30px 30px 10px;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
    }
 
@@ -850,5 +852,12 @@ h2 {
    button.item-dropdown:hover {
       background-color: var(--destaque);
       color: var(--bg-main);
+   }
+
+   /* SOBRE MIM */
+   .bloco-css {
+      padding: 0 30px;
+      margin: 18px;
+      border-left: 2px solid rgba(255, 255, 255, 0.05);
    }
 }

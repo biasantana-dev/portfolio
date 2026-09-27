@@ -8,7 +8,7 @@
    --destaque: #bd93f9;
    --status: #50fa7b;
    --titulos: #ff79c6;
-   --coment-cod: #f1fa8c;
+   --coment-cod: #8089b0; 
    --btn-links: #007acc;
    --fonte-texto: "JetBrains Mono", monospace;
    --fonte-titulo: "Montserrat", sans-serif;
@@ -445,7 +445,7 @@ h2 {
 }
 
 .amarelo {
-   background-color: var(--coment-cod);
+   background-color: #f1fa8c;
 }
 
 .verde {

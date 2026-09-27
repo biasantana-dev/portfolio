@@ -562,8 +562,8 @@ h2 {
 
 .footer-icons {
    display: flex;
-   margin: 0 5px;
-   gap: 18px;
+   margin: 0 3px;
+   gap: 13px;
 }
 
 /* DESKTOP*/
@@ -929,11 +929,17 @@ h2 {
    }
 
    .seta {
-     margin-right: 8px;
+      margin-right: 8px;
    }
 
    .status-bar {
       font-size: 0.75em;
       padding: 5px 16px;
+   }
+
+   .footer-icons {
+      margin: 0 5px;
+      margin: 0 5px;
+      gap: 18px;
    }
 }

@@ -3,6 +3,7 @@ const secoes = document.querySelectorAll('.secao-conteudo');
 const sidebar = document.querySelector('.sidebar');
 const dropdowns = document.querySelectorAll('.menu-item-dropdown');
 const btnsNavTop = document.querySelectorAll('.btn-nav-top');
+const botoesAcao = document.querySelectorAll('.btn-acao');
 
 const btnMenuMobile = document.getElementById('btn-menu');
 const overlay = document.getElementById('overlay-mobile');
@@ -166,13 +167,15 @@ function alternarTela(idAlvo) {
 
 menuItens.forEach(item => {
    item.addEventListener('click', e => {
+      if (item.hasAttribute('download')) return;
+
       e.preventDefault();
       const alvo = item.getAttribute('href').replace('#', '');
 
       alternarTela(alvo);
 
       if (window.innerWidth <= 768) {
-        fecharMenuMobile();
+         fecharMenuMobile();
       }
    });
 });
@@ -259,3 +262,12 @@ if (btnSobreProjeto) {
       alert('VS Code Portfolio v1.0\nDesenvolvido por Beatriz Santana com HTML, CSS e JavaScript puro!');
    });
 }
+
+botoesAcao.forEach(btn => {
+   btn.addEventListener('click', e => {
+      e.preventDefault();
+      const alvo = btn.getAttribute('data-alvo');
+
+      alternarTela(alvo);
+   });
+});

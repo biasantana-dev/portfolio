@@ -596,7 +596,6 @@ h2 {
    }
 
    .vscode-container {
-      flex: 1;
       display: flex;
       overflow: hidden;
    }

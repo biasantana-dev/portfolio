@@ -499,14 +499,15 @@ h2 {
    display: flex;
    flex-wrap: wrap;
    gap: 10px;
+   margin-bottom: 15px;
 }
 
 .rede-link {
    color: var(--texto-main);
    text-decoration: none;
-   font-size: 0.85em;
+   font-size: 0.82em;
    border: 1px solid rgba(255, 255, 255, 0.293);
-   padding: 6px 16px;
+   padding: 6px 13px;
    border-radius: 4px;
    opacity: 0.9;
    transition: 0.2s ease;
@@ -552,8 +553,14 @@ h2 {
    display: flex;
    justify-content: space-between;
    padding: 5px 16px;
-   font-size: 0.72em;
+   font-size: 0.75em;
    font-weight: 600;
+}
+
+.footer-icons {
+   display: flex;
+   margin: 0 5px;
+   gap: 18px;
 }
 
 /* DESKTOP*/

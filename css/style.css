@@ -497,7 +497,6 @@ h2 {
 /* REDES SOCIAIS */
 .redes-sociais {
    display: flex;
-   justify-content: space-evenly;
    flex-wrap: wrap;
    gap: 10px;
 }
@@ -507,7 +506,7 @@ h2 {
    text-decoration: none;
    font-size: 0.85em;
    border: 1px solid rgba(255, 255, 255, 0.293);
-   padding: 8px 16px;
+   padding: 6px 16px;
    border-radius: 4px;
    opacity: 0.9;
    transition: 0.2s ease;

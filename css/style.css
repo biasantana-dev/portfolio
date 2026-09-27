@@ -553,7 +553,7 @@ h2 {
    color: var(--bg-main);
    display: flex;
    justify-content: space-between;
-   padding: 5px 16px;
+   padding: 5px 5px;
    font-size: 0.75em;
    font-weight: 600;
    flex-shrink: 0;
@@ -930,5 +930,10 @@ h2 {
 
    .seta {
      margin-right: 8px;
+   }
+
+   .status-bar {
+      font-size: 0.75em;
+      padding: 5px 16px;
    }
 }

@@ -227,9 +227,8 @@ h2 {
 }
 
 .secao-conteudo {
-   padding: 20px 15px;
+   padding: 20px 15px 35px 15px;
    box-sizing: border-box;
-   overflow-y: auto;
    width: 100%;
 }
 
@@ -761,9 +760,8 @@ h2 {
    }
 
    .secao-conteudo {
-      padding: 30px 20px 0;
+      padding: 30px 20px;
       margin-left: 40px;
-      padding-bottom: 50px !important;
    }
 
    .tab.tab-ativa {

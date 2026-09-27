@@ -568,6 +568,10 @@ h2 {
    z-index: 10;
 }
 
+#status-icon-desktop {
+   display: none;
+}
+
 .footer-icons {
    display: flex;
    margin: 0 3px;
@@ -943,6 +947,10 @@ h2 {
    .status-bar {
       font-size: 0.75em;
       padding: 5px 16px;
+   }
+
+   #status-icon-desktop {
+      display: inline;
    }
 
    .footer-icons {

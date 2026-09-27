@@ -736,7 +736,7 @@ h2 {
       margin-left: 1px;
       padding: 2px 4px;
       border-radius: 4px;
-      cursor: ´pointer;
+      cursor: pointer;
       opacity: 0;
       transition: opacity 0.2s, background-color 0.2s;
    }
@@ -769,7 +769,7 @@ h2 {
    .tab.tab-ativa {
       opacity: 1;
       background-color: var(--bg-main);
-      color: #070404;
+      color: var(--texto-main);
       border-top: 2px solid var(--destaque);
    }
 

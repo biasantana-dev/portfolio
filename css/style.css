@@ -27,6 +27,7 @@ body {
    color: var(--texto-main);
    font-family: var(--fonte-texto);
    height: 100vh;
+   height: 100dvh;
    overflow: hidden;
 }
 
@@ -108,6 +109,8 @@ h2 {
 }
 
 .vscode-container {
+   flex: 1;
+   min-height: 0;
    position: relative;
    overflow-y: auto;
 }
@@ -499,7 +502,6 @@ h2 {
    display: flex;
    flex-wrap: wrap;
    gap: 10px;
-   margin-bottom: 15px;
 }
 
 .rede-link {
@@ -507,7 +509,7 @@ h2 {
    text-decoration: none;
    font-size: 0.82em;
    border: 1px solid rgba(255, 255, 255, 0.293);
-   padding: 6px 13px;
+   padding: 6px 16px;
    border-radius: 4px;
    opacity: 0.9;
    transition: 0.2s ease;
@@ -555,6 +557,8 @@ h2 {
    padding: 5px 16px;
    font-size: 0.75em;
    font-weight: 600;
+   flex-shrink: 0;
+   z-index: 10;
 }
 
 .footer-icons {
@@ -758,14 +762,15 @@ h2 {
    }
 
    .secao-conteudo {
-      padding: 30px 20px;
+      padding: 30px 20px 0;
       margin-left: 40px;
+      padding-bottom: 50px !important;
    }
 
    .tab.tab-ativa {
       opacity: 1;
       background-color: var(--bg-main);
-      color: #fff;
+      color: #070404;
       border-top: 2px solid var(--destaque);
    }
 

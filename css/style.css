@@ -128,8 +128,7 @@ a:focus,
    padding: 20px;
 }
 
-.tag-codigo,
-.tag-cod-home {
+.tag-codigo {
    color: var(--titulos);
 }
 
@@ -216,8 +215,7 @@ a:focus,
    display: none;
 }
 
-.comentario,
-.coment {
+.comentario {
    color: var(--coment-cod);
    font-size: 0.95em;
 }
@@ -322,9 +320,8 @@ h2 {
 }
 
 .descricao-card {
-   padding: 0 4px;
    margin-top: 10px;
-   padding-left: 0;
+   padding: 0;
    font-size: 0.92em;
 }
 
@@ -350,7 +347,6 @@ h2 {
    gap: 10px;
    margin-bottom: 30px;
 }
-
 
 .verde-badge::before {
    content: "● ";
@@ -388,7 +384,6 @@ h2 {
 }
 
 /* BOTOES DE AÇAO */
-
 .botoes-acao {
    display: flex;
    justify-content: center;
@@ -489,7 +484,7 @@ h2 {
    width: 8px;
    height: 15px;
    background-color: var(--texto-main);
-   animation: piscar 1s step-end infinite
+   animation: piscar 1s step-end infinite;
 }
 
 @keyframes piscar {
@@ -580,7 +575,6 @@ h2 {
 
 /* DESKTOP*/
 @media (min-width: 768px) {
-
    .header-mobile,
    .aba-ativa-mobile {
       display: none;
@@ -714,7 +708,6 @@ h2 {
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
    }
 
-
    .card-projeto:hover {
       border-color: rgba(189, 147, 249, 0.4);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
@@ -768,7 +761,6 @@ h2 {
 
    .btn-fechar-aba:hover {
       background-color: rgba(255, 255, 255, 0.1);
-      ;
    }
 
    .secao-conteudo {
@@ -808,7 +800,6 @@ h2 {
       max-width: 130px;
    }
 
-   /*CONTAINER E BOTEIS DO MENU SUPERIOR*/
    .menu-item-dropdown {
       position: relative;
       display: inline-block;
@@ -912,10 +903,6 @@ h2 {
       justify-content: flex-start;
    }
 
-   .coment {
-      font-size: 1em;
-   }
-
    .tag-destaque {
       font-size: 1em;
    }
@@ -954,7 +941,6 @@ h2 {
    }
 
    .footer-icons {
-      margin: 0 5px;
       margin: 0 5px;
       gap: 18px;
    }

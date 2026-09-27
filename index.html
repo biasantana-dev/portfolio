@@ -11,9 +11,10 @@
 
 <body>
    <div id="overlay-mobile" class="escondido"></div>
+
    <header class="top-bar">
       <div class="header-mobile">
-         <i class="fa-solid fa-bars" id="btn-menu"></i>
+         <i class="fa-solid fa-bars" id="btn-menu" aria-label="Abrir menu"></i>
          <span id="aba-ativa-mobile">home.html</span>
       </div>
 
@@ -60,32 +61,32 @@
       </nav>
    </header>
 
-   <div class="vscode-container"> <!-- escondido no mobile -->
+   <div class="vscode-container"> 
       <nav class="activity-bar">
-         <div class="icones-topo" class="container-arquivos">
-            <button id="btn-activity-explorer" class="btn-activity btn-toggle-sidebar ativo" title="Explorador">
+         <div class="icones-topo container-arquivos">
+            <button id="btn-activity-explorer" class="btn-activity btn-toggle-sidebar ativo" title="Explorador" aria-label="Explorador">
                <i class="fa-regular fa-folder-open"></i>
             </button>
 
-            <button class="btn-activity" title="Pesquisar">
+            <button class="btn-activity" title="Pesquisar" aria-label="Pesquisar">
                <i class="fa-solid fa-magnifying-glass"></i>
             </button>
 
-            <button class="btn-activity" title="Controle de Origem">
+            <button class="btn-activity" title="Controle de Origem" aria-label="Controle de Origem">
                <i class="fa-solid fa-code-branch"></i>
             </button>
 
-            <button class="btn-activity" title="GitHub">
+            <button class="btn-activity" title="GitHub" aria-label="GitHub">
                <i class="fa-brands fa-github"></i>
             </button>
 
          </div>
          <div class="icones-base">
-            <button class="btn-activity" title="Perfil">
+            <button class="btn-activity" title="Perfil" aria-label="Perfil">
                <i class="fa-regular fa-user"></i>
             </button>
 
-            <button class="btn-activity" title="Configurações">
+            <button class="btn-activity" title="Configurações" aria-label="Configurações">
                <i class="fa-solid fa-gear"></i>
             </button>
          </div>
@@ -127,15 +128,14 @@
       </aside>
 
       <main class="editor">
-         <!-- Barra de Abas do Editor -->
          <div class="editor-tabs" id="tabs-container"></div>
 
+         <!-- Seção Home -->
          <section class="conteudo-ativo secao-conteudo" id="home">
-            <!-- hero - nomes e badges-->
             <div class="sintaxe-topo">
-               <p  class="coment" class="comentario"> &lt;!-- Olá, Mundo! Seja bem-vindo --&gt; </p>
-               <h1 class="titulo-hero"><span class="tag-cod-home" class="tag-codigo">&lt;h1&gt;</span>Beatriz Santana<span
-                    class="tag-cod-home" class="tag-codigo">&lt;/h1&gt;</span></h1>
+               <p class="comentario"> &lt;!-- Olá, Mundo! Seja bem-vindo --&gt; </p>
+               <h1 class="titulo-hero"><span class="tag-codigo tag-cod-home">&lt;h1&gt;</span>Beatriz Santana<span
+                    class="tag-codigo tag-cod-home">&lt;/h1&gt;</span></h1>
             </div>
 
             <div class="hero-badges">
@@ -144,7 +144,6 @@
                <span class="tech-badge azul">Autodidata</span>
             </div>
 
-            <!-- texto de apresentação-->
             <p class="texto-apresentacao">Estudante de Análise e Desenvolvimento de Sistemas com foco em <span
                   class="destaque-azul">desenvolvimento front-end</span> e <span class="destaque-roxo">lógica de
                   programação</span>.
@@ -153,13 +152,11 @@
                   class="destaque-verde">estágio em desenvolvimento de software</span>.
             </p>
 
-            <!-- botoes de açao principais -->
             <div class="botoes-acao">
                <a href="#sobre-mim" class="btn-acao" data-alvo="sobre-mim"><i class="fa-solid fa-user-astronaut"></i> Sobre Mim</a>
                <a href="#projetos" class="btn-acao" data-alvo="projetos"><i class="fa-solid fa-folder"></i> Projetos</a>
             </div>
 
-            <!-- terminal de apresentação -->
             <div class="terminal-perfil">
                <div class="terminal-cabecalho">
                   <span class="ponto vermelho"></span>
@@ -186,18 +183,17 @@
                </div>
             </div>
 
-            <!-- links-->
             <div class="redes-sociais">
-               <a href="https://github.com/biasantana-dev" target="_blank" class="rede-link"><i
+               <a href="https://github.com/biasantana-dev" target="_blank" rel="noopener noreferrer" class="rede-link"><i
                      class="fa-brands fa-github" style="color: #ff79c6"></i> GitHub</a>
-               <a href="https://linkedin.com/in/beatriz-santana-dev8" target="_blank" class="rede-link"><i
+               <a href="https://linkedin.com/in/beatriz-santana-dev8" target="_blank" rel="noopener noreferrer" class="rede-link"><i
                      class="fa-brands fa-linkedin-in" style="color: #ff79c6;"></i> LinkedIn</a>
-               <a href="mailto:beatrizsantana.dev@gmail.com" class="rede-link"><i class="fa-regular fa-envelope"
+               <a href="mailto:beatrizsantana.dev@gmail.com" rel="noopener noreferrer" class="rede-link"><i class="fa-regular fa-envelope"
                      style="color: #ff79c6;"></i> E-mail</a>
             </div>
          </section>
 
-
+         <!-- Seção Projetos -->
          <section id="projetos" class="secao-conteudo escondido">
             <div class="sintaxe-topo">
                <p class="coment"  class="comentario">// Projetos desenvolvidos</p>

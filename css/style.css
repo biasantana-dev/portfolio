@@ -571,7 +571,7 @@ h2 {
 .footer-icons {
    display: flex;
    margin: 0 3px;
-   gap: 13px;
+   gap: 5px;
 }
 
 /* DESKTOP*/

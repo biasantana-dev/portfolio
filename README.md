@@ -13,6 +13,12 @@
 
 ---
 
+<p align="center">
+  <img src="img/demonstracao-portfolio.gif" alt="Demonstração do Portfólio VS Code" width="100%">
+</p>
+
+---
+
 ## 📌 Sobre o Projeto
 
 O objetivo deste projeto é proporcionar uma experiência de navegação imersiva para recrutadores e desenvolvedores, simulando a interface de uma IDE real. 

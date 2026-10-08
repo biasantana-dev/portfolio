@@ -8,7 +8,7 @@
    --destaque: #bd93f9;
    --status: #50fa7b;
    --titulos: #ff79c6;
-   --coment-cod: #8089b0; 
+   --coment-cod: #8089b0;
    --btn-links: #007acc;
    --fonte-texto: "JetBrains Mono", monospace;
    --fonte-titulo: "Montserrat", sans-serif;
@@ -341,6 +341,10 @@ h2 {
    margin: 20px 0;
 }
 
+.tag-cod-home {
+   font-size: 1em;
+}
+
 .hero-badges {
    display: flex;
    flex-wrap: wrap;
@@ -590,14 +594,7 @@ h2 {
 
    .menu-desktop {
       display: flex;
-      gap: 2px;
-   }
-
-   .menu-desktop a {
-      text-decoration: none;
-      font-size: 0.82em;
-      color: var(--texto-main);
-      padding: 5px 8px;
+      gap: 3px;
    }
 
    .vscode-container {
@@ -616,7 +613,7 @@ h2 {
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 0;
+      padding: 10px 2px;
       width: 50px;
       background-color: var(--bg-sidebar);
       border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -661,7 +658,7 @@ h2 {
       position: static;
       display: flex;
       flex-direction: column;
-      width: 190px;
+      width: 200px;
       height: 100%;
       background-color: var(--bg-sidebar);
       border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -679,7 +676,7 @@ h2 {
    }
 
    .titulo-sidebar {
-      font-size: 0.75em;
+      font-size: 0.9em;
    }
 
    .pasta-raiz {
@@ -687,7 +684,7 @@ h2 {
    }
 
    .nome-pasta {
-      font-size: 0.75em;
+      font-size: 0.88em;
       padding: 5px 10px;
    }
 
@@ -698,14 +695,19 @@ h2 {
 
    .item-arquivo {
       gap: 10px;
-      padding: 6px 28px;
-      font-size: 0.82em;
+      padding: 8px 25px;
+      font-size: 0.92em;
    }
 
    /* PROJETOS */
    .grid-projetos {
-      margin: 30px 30px 30px 10px;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      margin: 30px 60px 30px 5px;
+      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+   }
+
+   .card-projeto {
+      padding: 10px 20px 18px;
    }
 
    .card-projeto:hover {
@@ -714,6 +716,10 @@ h2 {
    }
 
    /* EDITOR */
+   .editor {
+      overflow-y: auto;
+   }
+
    .editor-tabs {
       display: flex;
       background-color: var(--bg-sidebar);
@@ -724,7 +730,7 @@ h2 {
 
    .tab {
       padding: 5px 12px;
-      font-size: 0.82em;
+      font-size: 0.9em;
       color: #8b9298;
       background-color: transparent;
       opacity: 0.7;
@@ -777,13 +783,22 @@ h2 {
 
    /* NOME E APRESENTAÇAO */
    .titulo-hero {
-      font-size: 1.8em;
+      font-size: 1.85em;
       text-transform: uppercase;
    }
 
-   .hero-badges span:hover {
-      background-color: #2e303884;
+   .hero-badges {
+      margin-bottom: 20px;
+   }
+
+   .tech-badge {
+      font-size: 0.85em;
       opacity: 0.92;
+   }
+
+   .tech-badge:hover {
+      background-color: #2e303884;
+      opacity: 0.98;
       border-color: #ffffff46;
    }
 
@@ -810,8 +825,8 @@ h2 {
       border: none;
       color: var(--texto-main);
       font-family: var(--fonte-texto);
-      font-size: 0.82em;
-      padding: 4px 8px;
+      font-size: 0.9em;
+      padding: 4px 9px;
       cursor: pointer;
       border-radius: 4px;
       transition: background 0.2s ease;
@@ -853,7 +868,7 @@ h2 {
       color: var(--texto-main);
       padding: 7px 9px;
       text-decoration: none;
-      font-size: 0.78em;
+      font-size: 0.88em;
       font-family: var(--fonte-texto);
       text-align: left;
       cursor: pointer;
@@ -884,7 +899,8 @@ h2 {
    }
 
    .btn-acao {
-      width: 130px;
+      width: 155px;
+      font-size: 0.92em;
       padding: 8px 16px;
    }
 
@@ -895,8 +911,8 @@ h2 {
    .texto-apresentacao,
    .terminal-corpo,
    .comentario,
-   .descricao-card {
-      font-size: 0.96em;
+   .descricao-card, .linha-css {
+      font-size: 1.05em;
    }
 
    .botoes-card {
@@ -904,11 +920,15 @@ h2 {
    }
 
    .tag-destaque {
-      font-size: 1em;
+      font-size: 1.1em;
    }
 
    .linha-retorno {
-      padding-left: 15px;
+      padding-left: 30px;
+   }
+
+   .prompt {
+      margin-left: 10px;
    }
 
    .check {
@@ -916,11 +936,11 @@ h2 {
    }
 
    .card-projeto h2 {
-      font-size: 1.3em;
+      font-size: 1.4em;
    }
 
    .btn-card {
-      font-size: 0.8em;
+      font-size: 0.9em;
    }
 
    .fechamento-array {
@@ -931,8 +951,13 @@ h2 {
       margin-right: 8px;
    }
 
+   .rede-link {
+      font-size: 0.92em;
+      padding: 6px 12px;
+   }
+
    .status-bar {
-      font-size: 0.75em;
+      font-size: 0.83em;
       padding: 5px 16px;
    }
 

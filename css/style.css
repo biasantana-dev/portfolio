@@ -654,7 +654,7 @@ h2 {
       position: static;
       display: flex;
       flex-direction: column;
-      width: 200px;
+      width: 190px;
       height: 100%;
       background-color: var(--bg-sidebar);
       border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -672,7 +672,7 @@ h2 {
    }
 
    .titulo-sidebar {
-      font-size: 0.9em;
+      font-size: 0.8em;
    }
 
    .pasta-raiz {
@@ -680,8 +680,8 @@ h2 {
    }
 
    .nome-pasta {
-      font-size: 0.88em;
-      padding: 5px 10px;
+      font-size: 0.8em;
+      padding: 0px 10px 10px;
    }
 
    .lista-arquivos {
@@ -691,8 +691,8 @@ h2 {
 
    .item-arquivo {
       gap: 10px;
-      padding: 8px 25px;
-      font-size: 0.92em;
+      padding: 8px 8px 8px 25px;
+      font-size: 0.81em;
    }
 
    /* PROJETOS */
@@ -725,7 +725,7 @@ h2 {
 
    .tab {
       padding: 5px 12px;
-      font-size: 0.9em;
+      font-size: 0.82em;
       color: #8b9298;
       background-color: transparent;
       opacity: 0.7;
@@ -778,7 +778,7 @@ h2 {
 
    /* NOME E APRESENTAÇAO */
    .titulo-hero {
-      font-size: 2em;
+      font-size: 1.9em;
       text-transform: uppercase;
    }
 
@@ -787,8 +787,8 @@ h2 {
    }
 
    .tech-badge {
-      font-size: 0.85em;
-      opacity: 0.92;
+      font-size: 0.82em;
+      opacity: 0.9;
    }
 
    .tech-badge:hover {
@@ -820,7 +820,7 @@ h2 {
       border: none;
       color: var(--texto-main);
       font-family: var(--fonte-texto);
-      font-size: 0.9em;
+      font-size: 0.8em;
       padding: 4px 9px;
       cursor: pointer;
       border-radius: 4px;
@@ -863,7 +863,7 @@ h2 {
       color: var(--texto-main);
       padding: 7px 9px;
       text-decoration: none;
-      font-size: 0.88em;
+      font-size: 0.8em;
       font-family: var(--fonte-texto);
       text-align: left;
       cursor: pointer;
@@ -894,8 +894,9 @@ h2 {
    }
 
    .btn-acao {
-      width: 130px;
-      padding: 8px 16px;
+      width: 140px;
+      font-size: 0.85em;
+      padding: 7px 16px;
    }
 
    .terminal-perfil {
@@ -906,7 +907,7 @@ h2 {
    .terminal-corpo,
    .comentario,
    .descricao-card {
-      font-size: 1.05em;
+      font-size: 0.96em;
    }
 
    .botoes-card {
@@ -914,11 +915,11 @@ h2 {
    }
 
    .tag-destaque {
-      font-size: 1.1em;
+      font-size: 1.05em;
    }
 
    .linha-retorno {
-      padding-left: 5px;
+      padding-left: 20px;
    }
 
    .check {
@@ -926,7 +927,7 @@ h2 {
    }
 
    .card-projeto h2 {
-      font-size: 1.5em;
+      font-size: 1.3em;
    }
 
    .btn-card {

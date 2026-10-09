@@ -8,7 +8,7 @@
    --destaque: #bd93f9;
    --status: #50fa7b;
    --titulos: #ff79c6;
-   --coment-cod: #8089b0; 
+   --coment-cod: #8089b0;
    --btn-links: #007acc;
    --fonte-texto: "JetBrains Mono", monospace;
    --fonte-titulo: "Montserrat", sans-serif;
@@ -298,13 +298,9 @@ a:focus,
    color: var(--bg-main);
 }
 
-h2 {
-   font-size: 1.2em;
-}
-
 .tags-card {
    font-size: 0.8em;
-   letter-spacing: 1px;
+   letter-spacing: px;
    margin: 10px 0;
 }
 
@@ -335,7 +331,8 @@ h2 {
 }
 
 /* NOME E APRESENTAÇAO */
-.titulo-hero {
+.titulo-hero,
+.titulo {
    color: #fff;
    font-size: 1.8em;
    margin: 20px 0;
@@ -575,6 +572,7 @@ h2 {
 
 /* DESKTOP*/
 @media (min-width: 768px) {
+
    .header-mobile,
    .aba-ativa-mobile {
       display: none;
@@ -697,24 +695,25 @@ h2 {
 
    /* PROJETOS */
    .grid-projetos {
-      margin: 30px 60px 30px 20px;
+      margin: 30px 60px 30px 0;
       gap: 25px;
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
    }
 
-   .card-projeto
+   .card-projeto {
+      padding: 10px 20px 18px;
+   }
 
    .card-projeto:hover {
       border-color: rgba(189, 147, 249, 0.4);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
    }
 
-
    /* EDITOR */
    .editor {
       overflow-y: auto;
    }
-   
+
    .editor-tabs {
       display: flex;
       background-color: var(--bg-sidebar);
@@ -778,8 +777,16 @@ h2 {
 
    /* NOME E APRESENTAÇAO */
    .titulo-hero {
-      font-size: 1.9em;
+      font-size: 1.86em;
       text-transform: uppercase;
+   }
+
+   .titulo {
+      font-size: 1.8em;
+   }
+
+   .tag-cod-home {
+      font-size: 0.92em;
    }
 
    .hero-badges {
@@ -787,8 +794,9 @@ h2 {
    }
 
    .tech-badge {
-      font-size: 0.82em;
-      opacity: 0.9;
+      padding: 4px 10px;
+      font-size: 0.8em;
+      opacity: 0.92;
    }
 
    .tech-badge:hover {
@@ -799,7 +807,7 @@ h2 {
 
    .botoes-acao {
       justify-content: flex-start;
-      margin: 35px 0;
+      margin: 30px 0;
    }
 
    .redes-sociais {
@@ -895,19 +903,32 @@ h2 {
 
    .btn-acao {
       width: 140px;
+      font-size: 0.84em;
+      padding: 6px 12px;
+   }
+
+   .terminal-corpo {
+      padding: 20px;
       font-size: 0.85em;
-      padding: 7px 16px;
+      line-height: 1.7;
    }
 
    .terminal-perfil {
-      margin-right: 30px;
+      margin-right: 0;
    }
 
    .texto-apresentacao,
    .terminal-corpo,
-   .comentario,
-   .descricao-card {
-      font-size: 0.96em;
+   .comentario, .linha-css, .descricao-card {
+      font-size: 0.95em;
+   }
+
+   .linha-css {
+      margin: 0 2px;
+   }
+
+   .tecnologias-card {
+      font-size: 0.9em;
    }
 
    .botoes-card {
@@ -915,7 +936,7 @@ h2 {
    }
 
    .tag-destaque {
-      font-size: 1.05em;
+      font-size: 1.08em;
    }
 
    .linha-retorno {
@@ -927,15 +948,15 @@ h2 {
    }
 
    .card-projeto h2 {
-      font-size: 1.3em;
+      font-size: 1.37em;
    }
 
    .btn-card {
-      font-size: 0.8em;
+      font-size: 0.78em;
    }
 
    .fechamento-array {
-      font-size: 1.9em;
+      font-size: 1.8em;
    }
 
    .seta {
